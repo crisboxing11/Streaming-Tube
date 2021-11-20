@@ -20,7 +20,7 @@ onFormSubmit = event => {
             <form className="ui form" onSubmit={this.onFormSubmit} type="search">
                 <div className="field">
                     <label>Video Search</label>
-                    <input type="text" placeHolder="Search" value={this.state.term} onChange={this.onInputChange}></input>
+                    <input type="text" placeholder="Search" value={this.state.term} onChange={this.onInputChange}></input>
                 </div>
                 </form>
         </div>

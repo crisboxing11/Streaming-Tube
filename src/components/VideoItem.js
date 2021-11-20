@@ -1,9 +1,9 @@
 import React from 'react'
 
-function VideoItem() {
+const VideoItem = (props) => {
     return (
         <div>
-            
+            Video Item
         </div>
     )
 }
