@@ -42,12 +42,8 @@ class App extends React.Component {
             <div className="five wide column">
             <VideoList videos={this.state.videos} onSelect={this.onVideoSelect} />
             </div>
-        
-       
           </div>
-       
         </div>
-       
       </div>
     );
   }
