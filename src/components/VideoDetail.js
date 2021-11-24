@@ -5,11 +5,9 @@ if (!video) {
     return (
         <div class="ui active centered inline loader"></div>
     )
-
 }
 
 const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`
-
     return (
         <div>
             <div className="ui embed">
