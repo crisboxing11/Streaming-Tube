@@ -6,7 +6,6 @@ import VideoDetail from './components/VideoDetail';
 
 class App extends React.Component {
   state={videos: [], selectedVideo: null};
-
   componentDidMount () {
     this.onTermSubmit('Super Broly')
   }
@@ -27,7 +26,7 @@ class App extends React.Component {
   onVideoSelect = (video) => {
    this.setState({ selectedVideo: video })
   }
-  
+
   render() {
     return (
       <div className="ui container">
