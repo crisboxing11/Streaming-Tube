@@ -49,3 +49,5 @@ class App extends React.Component {
 export default App
 
 
+// App will be redesigned using hooks completely
+// New style will be added as well using SASS
