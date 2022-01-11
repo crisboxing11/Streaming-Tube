@@ -1,17 +1,19 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+const SearchBAr = () => {
+    const [term, setTerm] = useState('')
+}
 
-
-const SearchBar = () => {
-const [term, setTerm] = useState('')
+class SearchBar extends React.Component {
+state = {term: ''};
 
 onInputChange = (event) => {
-    setTerm( {term:event.target.value})
+    this.setState( {term:event.target.value})
 }
-onFormSubmit = (event) => {
+onFormSubmit = event => {
     event.preventDefault();
-    onSubmit(term)
+    this.props.onSubmit(this.state.term)
 }
-   
+    render () {
     return (
         <div className="search-bar ui segment"> 
             <form className="ui form" onSubmit={this.onFormSubmit} type="search">
@@ -22,7 +24,7 @@ onFormSubmit = (event) => {
                 </form>
         </div>
     )
-
+    }
 }
 
 export default SearchBar
