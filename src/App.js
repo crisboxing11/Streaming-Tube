@@ -10,59 +10,40 @@ const App = () => {
 //  This means to only run the function only one time[]
   useEffect(() => {
     onTermSubmit("Dragon Ball Z Abridged");
-  }, [])
+  }, []);
 
-
-}
-
-
-
-
-
-class App extends React.Component {
-  state={videos: [], selectedVideo: null};
-  componentDidMount () {
-    this.onTermSubmit('Dragon Ball Z Abridged')
-  }
-
-  onTermSubmit = async (term) => {
+ const onTermSubmit = async (term) => {
    const response = await youtube
    .get('/search', {
      params: {
         q: term
      }
    });
-   this.setState({
-     videos: response.data.items,
-     selectedVideo: response.data.items[0]
-    })
-  }
+   setVideos (response.data.items);
+   setSelectedVideo(response.data.items[0])
+  };
 
-  onVideoSelect = (video) => {
-   this.setState({ selectedVideo: video })
-  }
+  const onVideoSelect = (video) => {
+    setSelectedVideo(video);
+  };
 
-  render() {
-    return (
+  return (
       <div className="ui container">
-        <SearchBar onSubmit={this.onTermSubmit} />
+        <SearchBar onSubmit={onTermSubmit} />
         <div className="ui grid">
           <div className="ui row">
             <div className="eleven wide column">
-            <VideoDetail video={this.state.selectedVideo}/>
+            <VideoDetail video={selectedVideo}/>
             </div>
             <div className="five wide column">
-            <VideoList videos={this.state.videos} onSelect={this.onVideoSelect} />
+            <VideoList videos={videos} onSelect={onVideoSelect} />
             </div>
           </div>
         </div>
       </div>
     );
-  }
 }
 
 export default App
 
 
-// App will be redesigned using hooks completely
-// New style will be added as well using SASS
