@@ -3,7 +3,7 @@ import React from 'react'
 const  VideoDetail= ({ video }) => {
 if (!video) {
     return (
-        <div class="ui active centered inline loader"></div>
+        <div className="ui active centered inline loader"></div>
     )
 }
 
