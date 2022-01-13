@@ -2,17 +2,18 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
 import VideoList from './components/VideoList';
 import VideoDetail from './components/VideoDetail';
-import useVideos from '../hooks/useVideos';
+import useVideos from "./hooks/useVideos";
 
 const App = () => {
   // Manages the current selected video
   const [selectedVideo, setSelectedVideo] = useState(null);
 
  const [videos, search] = useVideos('Dragon Ball Z Abridged')
-  //  This means to only run the function only one time[]
- 
-    // setSelectedVideo(response.data.items[0]);
 
+  //  This means to only run the function only one time[]
+  useEffect (() => {
+    setSelectedVideo(videos[0]);
+  },[videos])
   return (
     <div className="ui container">
       <SearchBar onSubmit={search} />
