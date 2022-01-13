@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar';
 import VideoList from './components/VideoList';
-import youtube from './components/apis/youtube';
 import VideoDetail from './components/VideoDetail';
-import useVideos from '../hooks/useVideos'
+import useVideos from '../hooks/useVideos';
 
 const App = () => {
   // Manages the current selected video
