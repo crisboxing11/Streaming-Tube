@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import youtube from '../components/apis/youtube'
 
 
@@ -8,7 +8,7 @@ const useVideos = (defaultSearchTerm) => {
   //  This means to only run the function only one time[]
   useEffect(() => {
     search(defaultSearchTerm);
-  }, []);
+  }, [defaultSearchTerm]);
 
   const search = async (term) => {
     const response = await youtube.get("/search", {
